@@ -1,8 +1,6 @@
 var repoNameEl = document.querySelector("#repo-name");
 var issueContainerEl = document.querySelector("#issues-container");
 var limitWarningEl = document.querySelector("#limit-warning");
-var queryString = document.location.search;
-var repoNameEl = document.querySelector("#repo-name");
 
 var getRepoName = function () {
     // grab repo name from url query string
@@ -61,7 +59,6 @@ var displayIssues = function (issues) {
         var titleEl = document.createElement("span");
         titleEl.textContent = issues[i].title;
 
-
         // append to container
         issueEl.appendChild(titleEl);
 
@@ -71,8 +68,7 @@ var displayIssues = function (issues) {
         // check if issue is an actual issue or a pull request
         if (issues[i].pull_request) {
             typeEl.textContent = "(Pull request)";
-        }
-        else {
+        } else {
             typeEl.textContent = "(Issue)";
         }
 
